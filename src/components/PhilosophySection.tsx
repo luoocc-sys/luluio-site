@@ -15,11 +15,11 @@ const PhilosophySection = () => {
           viewport={{ once: true }}
           className="text-5xl md:text-7xl lg:text-8xl text-white tracking-tight mb-16 md:mb-24"
         >
-          Innovation{' '}
-          <span className="italic font-['Instrument_Serif'] text-white/40">
-            x
+          Love{' '}
+          <span className="italic font-['Instrument_Serif'] text-rose-400/50">
+            ×
           </span>{' '}
-          Vision
+          Forever
         </motion.div>
 
         {/* Two-column grid */}
@@ -53,13 +53,13 @@ const PhilosophySection = () => {
             {/* Block 1 */}
             <div>
               <p className="text-white/40 text-xs tracking-widest uppercase mb-4">
-                Choose your space
+                The first hello
               </p>
               <p className="text-white/70 text-base md:text-lg leading-relaxed">
-                Every meaningful breakthrough begins at the intersection of
-                disciplined strategy and remarkable creative vision. We operate
-                at that crossroads, turning bold thinking into tangible outcomes
-                that move people and reshape industries.
+                It all started with a simple hello. Two strangers, one
+                moment in time, and a spark that neither of us saw
+                coming. That moment changed everything—it was the
+                beginning of our forever.
               </p>
             </div>
 
@@ -69,13 +69,13 @@ const PhilosophySection = () => {
             {/* Block 2 */}
             <div>
               <p className="text-white/40 text-xs tracking-widest uppercase mb-4">
-                Shape the future
+                Our forever
               </p>
               <p className="text-white/70 text-base md:text-lg leading-relaxed">
-                We believe that the best work emerges when curiosity meets
-                conviction. Our process is designed to uncover hidden
-                opportunities and translate them into experiences that resonate
-                long after the first impression.
+                We believe that true love grows in the quiet
+                moments—the shared smiles, the gentle touches, the
+                unspoken understanding. Every day with you is a new
+                page in the most beautiful story I've ever known.
               </p>
             </div>
           </motion.div>

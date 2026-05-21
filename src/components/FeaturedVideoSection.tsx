@@ -30,22 +30,20 @@ const FeaturedVideoSection = () => {
               {/* Left card */}
               <div className="liquid-glass rounded-2xl p-6 md:p-8 max-w-md">
                 <p className="text-white/50 text-xs tracking-widest uppercase mb-3">
-                  Our Approach
+                  Our Philosophy
                 </p>
                 <p className="text-white text-sm md:text-base leading-relaxed">
-                  We believe in the power of curiosity-driven exploration. Every
-                  project starts with a question, and every answer opens a new
-                  door to innovation.
+                  We believe that love is not just a feeling—it's a choice we make every single day. Through laughter, tears, and everything in between, we choose each other, again and again.
                 </p>
               </div>
 
               {/* Right button */}
               <motion.button
-                className="liquid-glass rounded-full px-8 py-3 text-white text-sm font-medium"
+                className="liquid-glass rounded-full px-8 py-3 text-white text-sm font-medium hover:shadow-[0_0_20px_rgba(255,100,140,0.15)]"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Explore more
+                See our memories
               </motion.button>
             </div>
           </div>

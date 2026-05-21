@@ -5,18 +5,18 @@ const services = [
   {
     videoUrl:
       'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260314_131748_f2ca2a28-fed7-44c8-b9a9-bd9acdd5ec31.mp4',
-    tag: 'Strategy',
-    title: 'Research & Insight',
+    tag: 'Firsts',
+    title: 'How We Met',
     description:
-      'We dig deep into data, culture, and human behavior to surface the insights that drive meaningful, lasting change.',
+      'Somewhere between hello and goodbye, we found something eternal. That first conversation, that first laugh, that first moment when the world stopped and it was just us.',
   },
   {
     videoUrl:
       'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260324_151826_c7218672-6e92-402c-9e45-f1e0f454bdc4.mp4',
-    tag: 'Craft',
-    title: 'Design & Execution',
+    tag: 'Forever',
+    title: 'Our Journey',
     description:
-      'From concept to launch, we obsess over every detail to deliver experiences that feel effortless and look extraordinary.',
+      'From coffee dates to midnight conversations, from holding hands to holding hearts. Every step, every stumble, every victory—I want to walk this path with you, always.',
   },
 ];
 
@@ -36,10 +36,10 @@ const ServicesSection = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-3xl md:text-5xl text-white tracking-tight">
-            What we do
+            Our Moments
           </h2>
           <span className="text-white/40 text-sm hidden md:block">
-            Our services
+            Love notes
           </span>
         </motion.div>
 
