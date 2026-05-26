@@ -3,7 +3,7 @@ import LoveDashboard from './components/LoveDashboard'
 import AboutSection from './components/AboutSection'
 import FeaturedVideoSection from './components/FeaturedVideoSection'
 import PhilosophySection from './components/PhilosophySection'
-// import TravelMap from './components/TravelMap'  // TODO: enable after testing
+import TravelMap from './components/TravelMap'
 import ServicesSection from './components/ServicesSection'
 import PhotoGallery from './components/PhotoGallery'
 
@@ -15,7 +15,7 @@ function App() {
       <AboutSection />
       <FeaturedVideoSection />
       <PhilosophySection />
-      {/* <TravelMap /> */}
+      <TravelMap />
       <ServicesSection />
       <PhotoGallery />
     </main>

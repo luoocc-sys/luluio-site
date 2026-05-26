@@ -1,5 +1,6 @@
+import { useEffect } from 'react';
 import 'leaflet/dist/leaflet.css';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import L from 'leaflet';
 import { motion } from 'framer-motion';
 
@@ -13,6 +14,7 @@ const visitedPlaces = [
 const MAP_CENTER: [number, number] = [20, 10];
 const MAP_ZOOM = 2;
 
+// Create emoji markers (called inside component to avoid SSR issues)
 const createEmojiIcon = (emoji: string) =>
   L.divIcon({
     className: '',
@@ -22,6 +24,15 @@ const createEmojiIcon = (emoji: string) =>
     popupAnchor: [0, -22],
   });
 
+// Helper to invalidate map size after mount (fixes Leaflet rendering in hidden/async containers)
+const MapInvalidator = () => {
+  const map = useMap();
+  useEffect(() => {
+    setTimeout(() => map.invalidateSize(), 100);
+  }, [map]);
+  return null;
+};
+
 const TravelMap = () => {
   return (
     <section className="bg-black py-28 md:py-40 px-6 overflow-hidden">
@@ -29,7 +40,7 @@ const TravelMap = () => {
         {/* Subtle radial gradient */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(255,255,255,0.02)_0%,_transparent_60%)] pointer-events-none" />
 
-        {/* Header row — same style as LoveDashboard */}
+        {/* Header */}
         <motion.div
           className="relative mb-12 md:mb-16"
           initial={{ opacity: 0, y: 30 }}
@@ -45,16 +56,16 @@ const TravelMap = () => {
           </p>
         </motion.div>
 
-        {/* Map card — liquid-glass rounded-3xl container */}
+        {/* Map card — NO liquid-glass (breaks Leaflet) */}
         <motion.div
-          className="liquid-glass rounded-3xl overflow-hidden relative"
+          className="rounded-3xl overflow-hidden border border-white/10 relative"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          {/* aspect-[16/9] on desktop, aspect-square on mobile */}
-          <div className="aspect-square md:aspect-[16/9] w-full">
+          {/* Map needs explicit height; use min-h to ensure it renders */}
+          <div className="w-full h-[400px] md:h-[500px]">
             <MapContainer
               center={MAP_CENTER}
               zoom={MAP_ZOOM}
@@ -62,11 +73,10 @@ const TravelMap = () => {
               attributionControl={false}
               scrollWheelZoom={false}
               className="w-full h-full rounded-3xl"
-              style={{ background: '#0a0a0a' }}
+              style={{ background: '#0a0a0a', zIndex: 1 }}
             >
-              {/* Dark tile layer — CartoDB dark_all */}
               <TileLayer url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png" />
-
+              <MapInvalidator />
               {visitedPlaces.map((place) => (
                 <Marker
                   key={place.name}
